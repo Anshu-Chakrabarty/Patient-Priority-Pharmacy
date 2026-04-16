@@ -1112,25 +1112,126 @@ body {
 }
 
 @media (max-width: 768px) {
-  .section, .section-sm { padding: 56px 0; }
+  .section, .section-sm { padding: 48px 0; }
+  .container { padding: 0 16px; }
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
-  .trust-bar .container { justify-content: center; }
-  .hero-stats { grid-template-columns: 1fr; gap: 16px; }
+
+  /* Topbar — stack address & links vertically, both visible */
+  .topbar { padding: 10px 0; }
+  .topbar .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-align: center;
+  }
+  .topbar-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .topbar-links span { display: none; }
+
+  /* Hero */
+  .hero { padding: 48px 0 0; }
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .hero-visual { display: none; }
+  .hero h1 { font-size: 30px; }
+  .hero-desc { font-size: 15px; }
+  .hero-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding-top: 24px;
+  }
+  .hero-stat-num { font-size: 20px; }
+  .hero-stat-label { font-size: 11px; }
+
+  /* Trust bar */
+  .trust-bar .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .trust-item { font-size: 13px; }
+
+  /* Services */
+  .services-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 32px; }
+  .service-card { padding: 24px 20px; }
+
+  /* Steps */
+  .steps-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
   .steps-grid::before { display: none; }
-  .values-grid { grid-template-columns: 1fr; }
-  .topbar .container { justify-content: center; }
-  .topbar-links { display: none; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .how-detailed .step-big { grid-template-columns: 1fr; gap: 16px; }
+  .step-card { padding: 0 8px 24px; }
+  .step-num { width: 56px; height: 56px; font-size: 20px; margin-bottom: 16px; }
+
+  /* Why us */
+  .why-grid { grid-template-columns: 1fr; }
+  .why-visual { display: none; }
+  .why-item { gap: 12px; margin-bottom: 20px; }
+  .why-item-icon { width: 40px; height: 40px; font-size: 18px; }
+
+  /* Testimonials */
+  .testi-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  /* About */
+  .about-mission { grid-template-columns: 1fr; }
+  .about-img-box { display: none; }
+  .values-grid { grid-template-columns: 1fr; gap: 12px; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Services full */
+  .services-full { grid-template-columns: 1fr; }
+
+  /* Products */
+  .products-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .products-filters { gap: 8px; }
+  .filter-btn { padding: 6px 14px; font-size: 13px; }
+
+  /* How it works */
+  .how-detailed .step-big { grid-template-columns: 1fr; gap: 12px; }
   .step-connector { display: none; }
+  .step-big-num { width: 60px; height: 60px; font-size: 22px; }
+
+  /* FAQ */
+  .faq-grid { grid-template-columns: 1fr; gap: 24px; }
+  .faq-categories { position: static; display: flex; flex-wrap: wrap; gap: 8px; }
+  .faq-cat-btn { width: auto; padding: 8px 14px; font-size: 13px; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+  .contact-info-card { padding: 24px; }
+  .contact-form { padding: 24px; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .footer-bottom .legal { flex-wrap: wrap; gap: 12px; }
+
+  /* CTA */
+  .cta-banner { padding: 56px 0; }
+  .cta-actions { flex-direction: column; align-items: center; gap: 12px; }
+
+  /* Section titles */
+  .section-title { font-size: 26px; }
+  .page-hero h1 { font-size: 28px; }
+  .page-hero p { font-size: 15px; }
 }
 
 @media (max-width: 480px) {
+  .container { padding: 0 14px; }
+  .hero-stats { grid-template-columns: 1fr; gap: 12px; }
   .hero-actions { flex-direction: column; }
-  .btn { width: 100%; justify-content: center; }
-  .cta-actions { flex-direction: column; align-items: center; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .cta-actions .btn { width: 100%; justify-content: center; max-width: 320px; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .trust-bar .container { align-items: center; text-align: center; }
+  .topbar { font-size: 12px; }
 }
 </style>
 </head>
