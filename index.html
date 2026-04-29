@@ -386,25 +386,13 @@
             transform: translateY(0)
         }
         /* ══ HOME ══ */
-        /* Hero */
+        /* Hero - Clean Minimalist */
         
         .hero {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1a3a4a 100%);
-            padding: 80px 0 0;
+            background: radial-gradient(ellipse at 100% 0%, rgba(109, 179, 63, 0.10) 0%, transparent 55%), radial-gradient(ellipse at 0% 100%, rgba(232, 97, 26, 0.07) 0%, transparent 55%), radial-gradient(ellipse at 60% 50%, rgba(255, 255, 255, 1) 0%, #f7f9f6 100%);
+            padding: 72px 0 0;
             overflow: hidden;
             position: relative
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(232, 97, 26, 0.12) 0%, transparent 65%);
-            border-radius: 50%;
-            pointer-events: none
         }
         
         .hero::after {
@@ -413,15 +401,28 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 4px;
+            height: 3px;
             background: linear-gradient(90deg, var(--orange), var(--green-light), var(--green-dark))
+        }
+        /* Subtle decorative shape top-right */
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 480px;
+            height: 480px;
+            background: radial-gradient(circle at 80% 20%, rgba(109, 179, 63, 0.13) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(232, 97, 26, 0.08) 0%, transparent 50%);
+            pointer-events: none
         }
         
         .hero-inner {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: center
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 80px;
+            align-items: center;
+            padding-bottom: 72px
         }
         
         .hero-content {
@@ -433,21 +434,21 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: var(--green-bg);
+            border: 1px solid rgba(109, 179, 63, 0.25);
             border-radius: 100px;
-            padding: 8px 18px;
-            font-size: 12px;
+            padding: 7px 16px;
+            font-size: 11px;
             font-weight: 700;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 24px;
+            color: var(--green-dark);
+            margin-bottom: 28px;
             letter-spacing: 1.5px;
             text-transform: uppercase
         }
         
         .hero-badge .dot {
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
             background: var(--green-light);
             border-radius: 50%;
             animation: pulse 2s infinite
@@ -467,29 +468,29 @@
         
         .hero h1 {
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: clamp(38px, 5.5vw, 64px);
+            font-size: clamp(40px, 5.2vw, 62px);
             font-weight: 800;
             line-height: 1.05;
-            margin-bottom: 20px;
-            color: white;
+            margin-bottom: 22px;
+            color: var(--navy);
             text-transform: uppercase;
             letter-spacing: -1px
         }
         
         .hero h1 .accent-orange {
-            color: var(--orange-light)
+            color: var(--orange)
         }
         
         .hero h1 .accent-green {
-            color: var(--green-light)
+            color: var(--green-dark)
         }
         
         .hero-desc {
-            font-size: 17px;
-            color: rgba(255, 255, 255, 0.72);
-            line-height: 1.75;
+            font-size: 16.5px;
+            color: var(--text-muted);
+            line-height: 1.8;
             margin-bottom: 36px;
-            max-width: 500px
+            max-width: 490px
         }
         
         .hero-actions {
@@ -503,14 +504,14 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 0;
-            margin-top: 48px;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 32px 0 40px
+            margin-top: 52px;
+            border-top: 1px solid var(--gray-mid);
+            padding: 32px 0 0
         }
         
         .hero-stats>div {
-            padding: 0 28px;
-            border-right: 1px solid rgba(255, 255, 255, 0.12)
+            padding: 0 24px;
+            border-right: 1px solid var(--gray-mid)
         }
         
         .hero-stats>div:first-child {
@@ -523,182 +524,127 @@
         
         .hero-stat-num {
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: 34px;
+            font-size: 32px;
             font-weight: 800;
-            color: var(--orange-light);
+            color: var(--orange);
             line-height: 1;
-            margin-bottom: 4px
+            margin-bottom: 5px
         }
         
         .hero-stat-label {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.55);
+            font-size: 12.5px;
+            color: var(--text-muted);
             font-weight: 500;
-            letter-spacing: 0.3px
+            line-height: 1.4
         }
-        /* Hero Visual */
+        /* Hero Visual — clean illustration panel */
         
         .hero-visual {
             position: relative;
             display: flex;
             justify-content: center;
-            align-items: flex-end
+            align-items: center;
+            z-index: 1
         }
         
-        .hero-card-main {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            padding: 28px;
+        .hero-illustration {
             width: 100%;
-            max-width: 380px;
-            position: relative;
-            z-index: 2
+            max-width: 440px
         }
+        /* Pill/badge - keep for compat */
         
-        .hero-card-main h3 {
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--text-muted)
+        .hero-card-main,
+        .floating-card,
+        .floating-card-1,
+        .floating-card-2,
+        .claim-card,
+        .status-list,
+        .status-item,
+        .status-badge,
+        .sb-ready,
+        .sb-pending,
+        .sb-shipped,
+        .claim-label,
+        .claim-value,
+        .claim-sub,
+        .fc-icon,
+        .fc-orange,
+        .fc-green,
+        .fc-text {
+            display: none
         }
+        /* Hero info cards - clean grid replacing old card */
         
-        .claim-card {
-            background: linear-gradient(135deg, var(--orange), #c95210);
-            border-radius: 12px;
-            padding: 20px;
-            color: white;
-            margin-bottom: 16px
-        }
-        
-        .claim-label {
-            font-size: 10px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            opacity: 0.8;
-            font-weight: 700
-        }
-        
-        .claim-value {
-            font-size: 20px;
-            font-weight: 800;
-            margin: 6px 0 2px;
-            font-family: 'Barlow Condensed', sans-serif;
-            letter-spacing: -0.5px
-        }
-        
-        .claim-sub {
-            font-size: 12px;
-            opacity: 0.8
-        }
-        
-        .status-list {
-            list-style: none
-        }
-        
-        .status-item {
+        .hero-info-grid {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--gray-mid);
-            font-size: 13.5px
+            flex-direction: column;
+            gap: 16px;
+            width: 100%
         }
         
-        .status-item:last-child {
-            border-bottom: none
-        }
-        
-        .status-item .sname {
-            font-weight: 600
-        }
-        
-        .status-badge {
-            font-size: 11px;
-            font-weight: 700;
-            padding: 3px 10px;
-            border-radius: 100px;
-            letter-spacing: 0.3px
-        }
-        
-        .sb-ready {
-            background: var(--green-bg);
-            color: var(--green-dark)
-        }
-        
-        .sb-pending {
-            background: var(--orange-bg);
-            color: var(--orange)
-        }
-        
-        .sb-shipped {
-            background: #E8F4FD;
-            color: #1565C0
-        }
-        
-        .floating-card {
-            position: absolute;
+        .hero-info-card {
             background: white;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            padding: 12px 16px;
+            border: 1px solid var(--gray-mid);
+            border-radius: 14px;
+            padding: 20px 24px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 13px;
-            font-weight: 600;
-            z-index: 3;
-            animation: float 4s ease-in-out infinite
+            gap: 18px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.25s ease, transform 0.25s ease
         }
         
-        @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0)
-            }
-            50% {
-                transform: translateY(-8px)
-            }
+        .hero-info-card:hover {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
+            transform: translateY(-2px)
         }
         
-        .floating-card-1 {
-            top: 24px;
-            left: -32px;
-            animation-delay: 0s
+        .hero-info-card.accent-g {
+            border-left: 4px solid var(--green-light)
         }
         
-        .floating-card-2 {
-            bottom: 50px;
-            right: -24px;
-            animation-delay: 2s
+        .hero-info-card.accent-o {
+            border-left: 4px solid var(--orange)
         }
         
-        .fc-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 9px;
+        .hero-info-card.accent-n {
+            border-left: 4px solid var(--navy)
+        }
+        
+        .hic-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 22px;
             flex-shrink: 0
         }
         
-        .fc-orange {
-            background: var(--orange-bg)
-        }
-        
-        .fc-green {
+        .hic-icon.bg-g {
             background: var(--green-bg)
         }
         
-        .fc-text small {
+        .hic-icon.bg-o {
+            background: var(--orange-bg)
+        }
+        
+        .hic-icon.bg-n {
+            background: rgba(13, 27, 42, 0.07)
+        }
+        
+        .hic-body strong {
             display: block;
-            font-size: 11px;
-            color: var(--text-muted);
-            font-weight: 400
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 2px
+        }
+        
+        .hic-body span {
+            font-size: 12.5px;
+            color: var(--text-muted)
         }
         /* 3-Pillar Section */
         
@@ -828,8 +774,8 @@
         /* Trust Bar */
         
         .trust-bar {
-            background: var(--navy);
-            padding: 24px 0
+            background: linear-gradient(90deg, rgba(13, 27, 42, 0.97) 0%, rgba(13, 27, 42, 0.97) 100%), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat;
+            padding: 28px 0
         }
         
         .trust-bar .container {
@@ -864,7 +810,8 @@
         /* How We Work */
         
         .how-work {
-            background: var(--gray-light)
+            background: linear-gradient(180deg, rgba(245, 245, 247, 0.97) 0%, rgba(245, 245, 247, 0.97) 100%), url('https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat;
+            position: relative
         }
         
         .how-grid {
@@ -928,7 +875,7 @@
         }
         
         .why-visual-box {
-            background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.92), rgba(28, 46, 64, 0.92)), url('https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&q=80&auto=format&fit=crop') center/cover no-repeat;
             border-radius: var(--radius-lg);
             padding: 48px 40px;
             position: relative;
@@ -1053,7 +1000,7 @@
         /* Testimonials */
         
         .testimonials {
-            background: var(--navy);
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.94) 0%, rgba(13, 27, 42, 0.94) 100%), url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat;
             color: white
         }
         
@@ -1144,8 +1091,8 @@
         /* CTA Banner */
         
         .cta-banner {
-            background: linear-gradient(135deg, var(--orange) 0%, #c95210 40%, var(--green-dark) 100%);
-            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(232, 97, 26, 0.93) 0%, rgba(201, 82, 16, 0.90) 40%, rgba(26, 122, 60, 0.93) 100%), url('https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat;
+            padding: 90px 0;
             text-align: center;
             color: white;
             position: relative;
@@ -1204,15 +1151,15 @@
         }
         
         .aud-law {
-            background: linear-gradient(135deg, #1a0a00 0%, #2d1200 100%)
+            background: linear-gradient(135deg, rgba(26, 10, 0, 0.90) 0%, rgba(45, 18, 0, 0.85) 100%), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat
         }
         
         .aud-provider {
-            background: linear-gradient(135deg, #001a0d 0%, #002d1a 100%)
+            background: linear-gradient(135deg, rgba(0, 26, 13, 0.90) 0%, rgba(0, 45, 26, 0.85) 100%), url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat
         }
         
         .aud-worker {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%)
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.90) 0%, rgba(28, 46, 64, 0.85) 100%), url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat
         }
         
         .audience-hero .container {
@@ -1427,16 +1374,18 @@
         /* ══ ABOUT PAGE ══ */
         
         .page-hero {
-            padding: 64px 0;
-            text-align: center
+            padding: 72px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden
         }
         
         .ph-orange-bg {
-            background: linear-gradient(135deg, var(--orange-bg) 0%, var(--green-bg) 100%)
+            background: linear-gradient(135deg, rgba(254, 240, 231, 0.95) 0%, rgba(238, 247, 230, 0.95) 100%), url('https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat
         }
         
         .ph-navy-bg {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%)
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.90) 0%, rgba(28, 46, 64, 0.88) 100%), url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat
         }
         
         .page-hero h1 {
@@ -2155,6 +2104,75 @@
                 grid-template-columns: repeat(3, 1fr)
             }
         }
+        /* ══ ADDITIONAL PHOTO & VISUAL ENHANCEMENTS ══ */
+        /* Hero info card responsive */
+        
+        @media(max-width:900px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding-bottom: 56px
+            }
+            .hero-info-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px
+            }
+        }
+        
+        @media(max-width:580px) {
+            .hero-info-grid {
+                grid-template-columns: 1fr
+            }
+        }
+        /* Navbar bottom gradient accent line */
+        
+        .navbar::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--orange), var(--green-light), var(--green-dark));
+            opacity: 0.6
+        }
+        /* Photo banner responsive */
+        
+        @media(max-width: 768px) {
+            .photo-banner-text {
+                font-size: 22px !important
+            }
+        }
+        /* Enhanced card hover with shadow */
+        
+        .benefit-card,
+        .svc-card,
+        .value-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease
+        }
+        
+        .benefit-card:hover,
+        .svc-card:hover,
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12)
+        }
+        /* Section with subtle radial gradient for depth */
+        
+        .section.pillars {
+            background: radial-gradient(ellipse at 80% 50%, rgba(232, 97, 26, 0.04) 0%, transparent 60%), radial-gradient(ellipse at 20% 50%, rgba(26, 122, 60, 0.04) 0%, transparent 60%), white
+        }
+        /* How work section - white cards on subtle bg */
+        
+        .how-card {
+            border-top: 3px solid transparent;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease
+        }
+        
+        .how-card:hover {
+            border-top-color: var(--orange)
+        }
     </style>
 </head>
 
@@ -2229,49 +2247,59 @@
                 <div class="hero-inner">
                     <div class="hero-content fade-in">
                         <div class="hero-badge">
-                            <div class="dot"></div>Nationwide Workers' Comp & PI Pharmacy</div>
+                            <div class="dot"></div>America's Dedicated Workers' Comp & Personal Injury Pharmacy</div>
                         <h1>The Pharmacy Built for <span class="accent-orange">Injured</span> <span class="accent-green">Workers</span> &amp; Their Teams</h1>
-                        <p class="hero-desc">Patient Priority Pharmacy exclusively specializes in Workers' Compensation and Personal Injury pharmacy services — delivering medications directly to injured workers with zero out-of-pocket cost and full claims coordination.</p>
+                        <p class="hero-desc">Local pharmacies weren't built for workers' comp. We were. Patient Priority Pharmacy delivers your prescribed medications directly to your door — with zero out-of-pocket cost, zero insurance hassles, and zero delays. Focus on healing.
+                            We handle the rest.</p>
                         <div class="hero-actions">
                             <a class="btn btn-primary" href="#" onclick="showPage('referral')">Submit a Referral →</a>
-                            <a class="btn btn-white-outline" href="#" onclick="showPage('workers')">I'm an Injured Worker</a>
+                            <a class="btn btn-outline" href="#" onclick="showPage('workers')">I'm an Injured Worker</a>
                         </div>
                         <div class="hero-stats">
                             <div>
                                 <div class="hero-stat-num">$0</div>
-                                <div class="hero-stat-label">Out-of-Pocket Cost to Injured Workers</div>
+                                <div class="hero-stat-label">Out-of-Pocket Ever — We Bill Insurance Directly</div>
                             </div>
                             <div>
                                 <div class="hero-stat-num">50</div>
-                                <div class="hero-stat-label">States Served Nationwide</div>
+                                <div class="hero-stat-label">States Served — Nationwide Home Delivery</div>
                             </div>
                             <div>
-                                <div class="hero-stat-num">WC + PI</div>
-                                <div class="hero-stat-label">Workers' Comp & Personal Injury</div>
+                                <div class="hero-stat-num">Next Day</div>
+                                <div class="hero-stat-label">Delivery on Most Prescriptions</div>
                             </div>
                         </div>
                     </div>
                     <div class="hero-visual fade-in" style="transition-delay:0.2s">
-                        <div class="floating-card floating-card-1">
-                            <div class="fc-icon fc-orange">⚖️</div>
-                            <div class="fc-text"><strong>Claim Verified</strong><small>WC Case #4782-B · Active</small></div>
-                        </div>
-                        <div class="hero-card-main">
-                            <h3>Claim Status Overview</h3>
-                            <div class="claim-card">
-                                <div class="claim-label">Next Shipment</div>
-                                <div class="claim-value">Shipping Today</div>
-                                <div class="claim-sub">3 medications dispatched · Free delivery to home</div>
+                        <div class="hero-info-grid">
+                            <div class="hero-info-card accent-g">
+                                <div class="hic-icon bg-g">💊</div>
+                                <div class="hic-body">
+                                    <strong>$0 Cost to Injured Workers</strong>
+                                    <span>We bill your workers' comp carrier directly — no out-of-pocket ever</span>
+                                </div>
                             </div>
-                            <ul class="status-list">
-                                <li><span class="sname">Naproxen 500mg</span><span class="status-badge sb-shipped">Shipped</span></li>
-                                <li><span class="sname">Cyclobenzaprine 10mg</span><span class="status-badge sb-ready">Processing</span></li>
-                                <li><span class="sname">Topical Diclofenac</span><span class="status-badge sb-pending">Auth Pending</span></li>
-                            </ul>
-                        </div>
-                        <div class="floating-card floating-card-2">
-                            <div class="fc-icon fc-green">🛡️</div>
-                            <div class="fc-text"><strong>No Out-of-Pocket</strong><small>Bill sent to carrier</small></div>
+                            <div class="hero-info-card accent-o">
+                                <div class="hic-icon bg-o">🚚</div>
+                                <div class="hic-body">
+                                    <strong>Next-Day Home Delivery</strong>
+                                    <span>Medications shipped directly to your door across all 50 states</span>
+                                </div>
+                            </div>
+                            <div class="hero-info-card accent-n">
+                                <div class="hic-icon bg-n">🛡️</div>
+                                <div class="hic-body">
+                                    <strong>We Fight the Insurance Company</strong>
+                                    <span>Prior auth, appeals, and claims coordination — handled for you</span>
+                                </div>
+                            </div>
+                            <div class="hero-info-card accent-g">
+                                <div class="hic-icon bg-g">⚖️</div>
+                                <div class="hic-body">
+                                    <strong>Lien-Based Billing for Attorneys</strong>
+                                    <span>Clients receive meds now — payment collected at settlement</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2299,30 +2327,64 @@
             <div class="container">
                 <div class="fade-in" style="text-align:center">
                     <span class="tag tag-orange">Who We Serve</span>
-                    <h2 class="section-title">Three Groups. One Dedicated Pharmacy.</h2>
-                    <p class="section-subtitle" style="margin:0 auto 0">We built our entire program around the three parties at the heart of every workers' comp and personal injury case.</p>
+                    <h2 class="section-title">One Pharmacy. Built for Three Partners.</h2>
+                    <p class="section-subtitle" style="margin:0 auto 0">Every party in a workers' comp or personal injury case deserves dedicated pharmacy support. We built our entire model around you.</p>
                 </div>
                 <div class="pillars-grid fade-in" style="transition-delay:0.15s">
                     <div class="pillar-card pillar-law" onclick="showPage('law')">
                         <div class="pillar-num">01</div>
                         <div class="pillar-icon">⚖️</div>
                         <h3>Law Firms</h3>
-                        <p>We partner with plaintiff attorneys to ensure your clients receive the medications they need — while we handle all billing and documentation to support your case.</p>
+                        <p>We fight alongside plaintiff attorneys so your clients receive uninterrupted medications — even through disputes and litigation. Lien-based billing, zero upfront cost, and detailed records to strengthen your case.</p>
                         <a class="pillar-link" onclick="showPage('law')">For Attorneys →</a>
                     </div>
                     <div class="pillar-card pillar-provider" onclick="showPage('providers')">
                         <div class="pillar-num">02</div>
                         <div class="pillar-icon">🩺</div>
                         <h3>Healthcare Providers</h3>
-                        <p>Physicians, clinics, and case managers can refer their workers' comp patients to us and we handle everything — insurance, billing, delivery — so you can focus on care.</p>
+                        <p>Send us a prescription and we handle everything — prior authorization, insurance billing, and next-day delivery. No admin burden, no repeated calls to adjusters. Just better outcomes for your patients.</p>
                         <a class="pillar-link" onclick="showPage('providers')">For Providers →</a>
                     </div>
                     <div class="pillar-card pillar-worker" onclick="showPage('workers')">
                         <div class="pillar-num">03</div>
                         <div class="pillar-icon">🦺</div>
                         <h3>Injured Workers</h3>
-                        <p>You've been injured at work or in an accident. We get your medications prescribed, approved, and delivered to your door — at absolutely no cost to you.</p>
+                        <p>Local pharmacies aren't built for your situation. We are. Get your prescribed medications delivered next-day to your home — no co-pays, no forms, no out-of-pocket costs. We fight the insurance company so you don't have to.</p>
                         <a class="pillar-link" onclick="showPage('workers')">For Injured Workers →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RETAIL vs PATIENT PRIORITY COMPARISON -->
+        <section class="section" style="background:var(--gray-light);padding:56px 0">
+            <div class="container">
+                <div style="text-align:center;margin-bottom:44px" class="fade-in">
+                    <span class="tag tag-orange">The Problem With Retail</span>
+                    <h2 class="section-title">Why Retail Pharmacies Fail Injured Workers</h2>
+                    <p class="section-subtitle" style="margin:0 auto">Retail pharmacies weren't designed for workers' comp claims. That's exactly why we exist.</p>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;max-width:900px;margin:0 auto;border:1px solid var(--gray-mid);border-radius:var(--radius-lg);overflow:hidden" class="fade-in">
+                    <div style="padding:32px;background:white">
+                        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px"> Retail Pharmacy</div>
+                        <ul style="list-style:none;display:flex;flex-direction:column;gap:16px">
+                            <li style="font-size:14px;color:#888;display:flex;gap:10px;align-items:flex-start"><span style="color:#E53E3E;font-weight:700;flex-shrink:0">❌</span>Doesn't understand WC billing rules — often denies or requires upfront payment</li>
+                            <li style="font-size:14px;color:#888;display:flex;gap:10px;align-items:flex-start"><span style="color:#E53E3E;font-weight:700;flex-shrink:0">❌</span>Stops filling if claim is disputed or in litigation</li>
+                            <li style="font-size:14px;color:#888;display:flex;gap:10px;align-items:flex-start"><span style="color:#E53E3E;font-weight:700;flex-shrink:0">❌</span>Long wait times, crowded locations, and no home delivery</li>
+                            <li style="font-size:14px;color:#888;display:flex;gap:10px;align-items:flex-start"><span style="color:#E53E3E;font-weight:700;flex-shrink:0">❌</span>No one fighting for your prior authorization denials</li>
+                            <li style="font-size:14px;color:#888;display:flex;gap:10px;align-items:flex-start"><span style="color:#E53E3E;font-weight:700;flex-shrink:0">❌</span>No case documentation to support your legal claim</li>
+                        </ul>
+                    </div>
+                    <div style="width:2px;background:var(--gray-mid)"></div>
+                    <div style="padding:32px;background:linear-gradient(180deg,rgba(238,247,230,0.6),white)">
+                        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:1px;text-transform:uppercase;color:var(--green-dark);margin-bottom:20px"> Patient Priority</div>
+                        <ul style="list-style:none;display:flex;flex-direction:column;gap:16px">
+                            <li style="font-size:14px;color:var(--text);display:flex;gap:10px;align-items:flex-start"><span style="color:var(--green-dark);font-weight:700;flex-shrink:0">✅</span>WC billing specialists — we bill the carrier directly, $0 from you</li>
+                            <li style="font-size:14px;color:var(--text);display:flex;gap:10px;align-items:flex-start"><span style="color:var(--green-dark);font-weight:700;flex-shrink:0">✅</span>Medications continue through disputes, denials, and litigation</li>
+                            <li style="font-size:14px;color:var(--text);display:flex;gap:10px;align-items:flex-start"><span style="color:var(--green-dark);font-weight:700;flex-shrink:0">✅</span>Free next-day home delivery — no driving, no waiting</li>
+                            <li style="font-size:14px;color:var(--text);display:flex;gap:10px;align-items:flex-start"><span style="color:var(--green-dark);font-weight:700;flex-shrink:0">✅</span>We appeal every denial until your prescription is approved</li>
+                            <li style="font-size:14px;color:var(--text);display:flex;gap:10px;align-items:flex-start"><span style="color:var(--green-dark);font-weight:700;flex-shrink:0">✅</span>Detailed records provided to support your attorney and claim</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -2333,29 +2395,29 @@
             <div class="container">
                 <div class="fade-in">
                     <span class="tag tag-navy">Our Process</span>
-                    <h2 class="section-title">Simple. Seamless. No Hassle.</h2>
-                    <p class="section-subtitle">From referral to delivery, we coordinate every step of the pharmacy process so injured workers never go without their medications.</p>
+                    <h2 class="section-title">From Injury to Delivered — In Simple Steps</h2>
+                    <p class="section-subtitle">Unlike retail pharmacies that weren't designed for workers' comp, our entire process is built around your claim. No delays, no confusion, no out-of-pocket.</p>
                 </div>
                 <div class="how-grid fade-in" style="transition-delay:0.1s">
                     <div class="how-card">
                         <div class="how-icon">📋</div>
-                        <h3>Referral Received</h3>
-                        <p>Attorney, physician, or case manager submits a referral with the injured worker's claim information.</p>
+                        <h3>1. We Receive the Referral</h3>
+                        <p>Your attorney, physician, or case manager submits a referral — or you self-refer directly. We only need basic claim and prescription information to get started.</p>
                     </div>
                     <div class="how-card">
                         <div class="how-icon">📞</div>
-                        <h3>Patient Contacted</h3>
-                        <p>Our enrollment team reaches out to the injured worker to gather prescription and shipping details.</p>
+                        <h3>2. We Enroll You Fast</h3>
+                        <p>Our enrollment team contacts you for a quick 5–10 minute call. We handle insurance verification, authorization, and all coordination with your carrier — you do nothing.</p>
                     </div>
                     <div class="how-card">
                         <div class="how-icon">🏛️</div>
-                        <h3>Claims Coordination</h3>
-                        <p>We work directly with the insurance carrier or lien to get authorization and handle all billing.</p>
+                        <h3>3. We Fight for Your Coverage</h3>
+                        <p>If your insurance carrier denies a medication, we appeal — immediately. We work with your attorney and physician to ensure your prescriptions are never interrupted, even during litigation.</p>
                     </div>
                     <div class="how-card">
                         <div class="how-icon">🚚</div>
-                        <h3>Direct Delivery</h3>
-                        <p>Medications are shipped directly to the injured worker's home — fast, free, and fully tracked.</p>
+                        <h3>4. Next-Day Delivery to Your Door</h3>
+                        <p>Most prescriptions ship next day via FedEx or UPS directly to your home, with tracking updates. Temperature-sensitive medications ship in insulated packaging — free of charge.</p>
                     </div>
                 </div>
             </div>
@@ -2391,35 +2453,35 @@
                     </div>
                     <div class="fade-in" style="transition-delay:0.2s">
                         <span class="tag tag-green">Why Patient Priority</span>
-                        <h2 class="section-title">A Pharmacy That Knows Workers' Comp Inside Out</h2>
-                        <p class="section-subtitle" style="margin-bottom:32px">We don't do retail pharmacy. We do one thing — workers' comp and personal injury — and we do it better than anyone.</p>
+                        <h2 class="section-title">We Don't Do Retail. We Do Workers' Comp — Exclusively.</h2>
+                        <p class="section-subtitle" style="margin-bottom:32px">Most pharmacies bill private insurance. We understand the complex, state-specific rules of workers' comp and personal injury — and we use that expertise to ensure your medications are never denied or delayed.</p>
                         <ul class="why-list">
                             <li class="why-item">
                                 <div class="why-item-icon">⚖️</div>
                                 <div>
-                                    <h4>Lien-Based Billing</h4>
-                                    <p>We bill the insurance carrier or work on a lien basis — meaning injured workers pay nothing out of pocket for their medications.</p>
+                                    <h4>We Bill the Carrier — Not You</h4>
+                                    <p>Zero out-of-pocket, zero co-pays, zero delivery fees. We go directly to your workers' comp or personal injury insurance carrier for reimbursement. If they deny it, we appeal.</p>
                                 </div>
                             </li>
                             <li class="why-item">
-                                <div class="why-item-icon" style="background:var(--green-bg)">🏛️</div>
+                                <div class="why-item-icon" style="background:var(--green-bg)">🔒</div>
                                 <div>
-                                    <h4>Claims Expertise</h4>
-                                    <p>Our team navigates complex workers' comp and personal injury insurance systems so attorneys, providers, and patients don't have to.</p>
+                                    <h4>Continuous Care Through Disputes & Litigation</h4>
+                                    <p>Other pharmacies stop filling when a claim is disputed. We don't. We operate on a lien basis for litigated cases — your medications continue while the case resolves.</p>
                                 </div>
                             </li>
                             <li class="why-item">
-                                <div class="why-item-icon">🚚</div>
+                                <div class="why-item-icon">🗺️</div>
                                 <div>
-                                    <h4>Direct-to-Patient Delivery</h4>
-                                    <p>Medications delivered directly to the injured worker's home or preferred address — no trips to the pharmacy required.</p>
+                                    <h4>State-Specific WC Expertise</h4>
+                                    <p>Workers' comp laws differ by state. Our team understands the nuances of every jurisdiction and ensures every prescription is handled in full compliance with your state's rules.</p>
                                 </div>
                             </li>
                             <li class="why-item">
                                 <div class="why-item-icon" style="background:var(--green-bg)">💊</div>
                                 <div>
-                                    <h4>Opioid-Free Pain Management</h4>
-                                    <p>We specialize in evidence-based, opioid-free pain relief options that support recovery without compromising long-term health.</p>
+                                    <h4>Opioid-Free Pain Management Options</h4>
+                                    <p>We specialize in evidence-based, opioid-free alternatives — including custom compounded topicals — that give effective relief without the risks of long-term opioid dependence.</p>
                                 </div>
                             </li>
                         </ul>
@@ -2431,13 +2493,15 @@
         <!-- TESTIMONIALS -->
         <section class="section testimonials">
             <div class="container">
-                <span class="tag tag-green">Patient Stories</span>
-                <h2 class="section-title">Injured Workers. Real Results.</h2>
-                <p class="section-subtitle">Hear directly from injured workers, attorneys, and providers who rely on Patient Priority Pharmacy.</p>
+                <span class="tag tag-green">Real Stories</span>
+                <h2 class="section-title">What Injured Workers, Attorneys & Providers Say</h2>
+                <p class="section-subtitle">Don't take our word for it. Hear from the people we serve every day.</p>
                 <div class="testi-grid">
                     <div class="testi-card fade-in">
                         <div class="testi-stars">★★★★★</div>
-                        <p class="testi-text">"Super professional and I get my meds at my door! I didn't have to fight with anyone or pay anything. Patient Priority handled it all with my workers' comp case."</p>
+                        <p class="testi-text">"I was so worried about getting my medications — the workers' comp process is confusing and my first pharmacy kept denying my prescriptions. Patient Priority took over and I had my meds at my door the next day. I didn't pay a single
+                            cent."
+                        </p>
                         <div class="testi-author">
                             <div class="testi-avatar av-orange">ML</div>
                             <div>
@@ -2448,7 +2512,8 @@
                     </div>
                     <div class="testi-card fade-in" style="transition-delay:0.1s">
                         <div class="testi-stars">★★★★★</div>
-                        <p class="testi-text">"As a plaintiff attorney, I refer all my clients to Patient Priority. They keep my clients medicated and compliant throughout the case, and the billing coordination is flawless."</p>
+                        <p class="testi-text">"As a plaintiff attorney handling WC cases, Patient Priority is my go-to referral. They keep my clients medicated and compliant throughout the case — even during litigation. The documentation they provide has been invaluable in
+                            my cases."</p>
                         <div class="testi-author">
                             <div class="testi-avatar av-green">JR</div>
                             <div>
@@ -2459,12 +2524,13 @@
                     </div>
                     <div class="testi-card fade-in" style="transition-delay:0.2s">
                         <div class="testi-stars">★★★★★</div>
-                        <p class="testi-text">"Love the staff and so helpful with getting my orders. I was confused about my claim and they walked me through everything step by step. Truly grateful."</p>
+                        <p class="testi-text">"My clinic refers all WC patients here. The staff handles all prior authorizations and carrier calls — things that used to eat up hours of my staff's time. The enrollment is fast and patients consistently receive their medications
+                            on time."</p>
                         <div class="testi-author">
-                            <div class="testi-avatar av-navy">SV</div>
+                            <div class="testi-avatar av-navy">DM</div>
                             <div>
-                                <div class="testi-name">Sarah V.</div>
-                                <div class="testi-loc">Injured Worker · Michigan</div>
+                                <div class="testi-name">Dr. M.</div>
+                                <div class="testi-loc">Occupational Medicine Physician · Ohio</div>
                             </div>
                         </div>
                     </div>
@@ -2475,10 +2541,10 @@
         <!-- CTA -->
         <section class="cta-banner">
             <div class="container" style="position:relative;z-index:1">
-                <h2>Ready to Refer an Injured Worker?</h2>
-                <p>Submit a referral in minutes — our enrollment team handles the rest.</p>
+                <h2>Stop Letting Insurance Control Your Medications</h2>
+                <p>We advocate for injured workers—handling billing, appealing denials, and delivering medications, all at no cost to you, your attorney, or your physician.</p>
                 <div class="cta-actions">
-                    <a class="btn btn-white" href="#" onclick="showPage('referral')">Submit a Referral Now</a>
+                    <a class="btn btn-white" href="#" onclick="showPage('referral')">Submit a Referral — It's Free</a>
                     <a class="btn btn-white-outline" href="tel:+14633081679">📞 Call 463-308-1679</a>
                 </div>
             </div>
@@ -2493,23 +2559,24 @@
             <div class="container">
                 <div class="aud-hero-content fade-in">
                     <span class="tag" style="background:rgba(232,97,26,0.2);color:var(--orange-light)">For Plaintiff Attorneys</span>
-                    <h1>The Pharmacy Partner Your Clients <span style="color:var(--orange-light)">Deserve</span></h1>
-                    <p>We work alongside plaintiff law firms handling workers' compensation and personal injury cases — ensuring your clients stay medicated, compliant, and supported throughout their claim.</p>
+                    <h1>Your Clients Stay Medicated. <span style="color:var(--orange-light)">Even Through Litigation.</span></h1>
+                    <p>Insurance companies deny medications, delay claims, and create obstacles for your clients. Patient Priority fights back. We provide uninterrupted prescription care — even through disputes — with lien-based billing so your clients never
+                        pay out of pocket. Detailed records. No burden on your office.</p>
                     <div class="hero-actions" style="margin-bottom:0">
                         <a class="btn btn-primary" href="#" onclick="showPage('referral')">Refer a Client →</a>
-                        <a class="btn btn-white-outline" href="tel:+14633081679">Speak with Our Team</a>
+                        <a class="btn btn-white-outline" href="tel:+14633081679">Speak with Our Attorney Team</a>
                     </div>
                 </div>
                 <div class="aud-hero-visual fade-in" style="transition-delay:0.2s">
                     <h3 style="color:white;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;opacity:0.7">What We Handle For You</h3>
                     <ul class="aud-checklist aud-check-law">
-                        <li>Lien-based billing — your clients pay $0 out-of-pocket</li>
-                        <li>Prior authorization and insurance negotiation</li>
-                        <li>Medication documentation to support your case</li>
-                        <li>Direct outreach and enrollment of your referred clients</li>
-                        <li>Ongoing adherence support to keep clients on track</li>
-                        <li>Coordination with treating physicians and case managers</li>
-                        <li>Nationwide service — we cover all 50 states</li>
+                        <li>Lien-based billing — your clients pay $0 out-of-pocket, always</li>
+                        <li>Medications continue even during disputes, denials & litigation</li>
+                        <li>Prior authorization handling — we fight the insurance company for you</li>
+                        <li>Detailed prescription records & billing statements to support your case</li>
+                        <li>Direct outreach and enrollment — your office does nothing after referral</li>
+                        <li>Dedicated attorney liaison — one point of contact for your whole firm</li>
+                        <li>Nationwide service across all 50 states — one pharmacy for all clients</li>
                     </ul>
                 </div>
             </div>
@@ -2572,8 +2639,9 @@
             <div class="container">
                 <div class="aud-hero-content fade-in">
                     <span class="tag" style="background:rgba(109,179,63,0.2);color:var(--green-light)">For Healthcare Providers</span>
-                    <h1>Pharmacy Support That <span style="color:var(--green-light)">Works With</span> Your Practice</h1>
-                    <p>We serve physicians, clinics, nurse case managers, and adjusters treating workers' comp and personal injury patients — handling all pharmacy logistics so you can focus entirely on patient care.</p>
+                    <h1>You Prescribe It. <span style="color:var(--green-light)">We Deliver It.</span> You Stay Focused on Care.</h1>
+                    <p>Stop losing hours to prior auth calls and insurance follow-ups. Send us a prescription and we handle everything — direct insurer billing, prior authorization appeals, and next-day home delivery to your patient. No administrative burden.
+                        No repeated calls to adjusters. Just better patient outcomes.</p>
                     <div class="hero-actions" style="margin-bottom:0">
                         <a class="btn btn-secondary" href="#" onclick="showPage('referral')">Refer a Patient →</a>
                         <a class="btn btn-white-outline" href="tel:+14633081679">Call Our Provider Line</a>
@@ -2651,23 +2719,24 @@
             <div class="container">
                 <div class="aud-hero-content fade-in">
                     <span class="tag" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.9)">For Injured Workers</span>
-                    <h1>Injured at Work? <span style="color:var(--orange-light)">We've Got</span> You Covered.</h1>
-                    <p>You focus on getting better. We'll make sure you have every medication you need — delivered directly to your door, at absolutely no cost to you.</p>
+                    <h1>Your Medications. <span style="color:var(--orange-light)">Delivered Free.</span> No Fight Required.</h1>
+                    <p>When you're injured, getting your medications shouldn't be another battle. Retail pharmacies often deny workers' comp claims or make you pay upfront. We're different — we specialize exclusively in workers' comp and personal injury
+                        cases, bill the insurance company directly, and deliver to your door next-day at zero cost to you.</p>
                     <div class="hero-actions" style="margin-bottom:0">
-                        <a class="btn btn-primary" href="#" onclick="showPage('referral')">Get My Medications →</a>
-                        <a class="btn btn-white-outline" href="tel:+14633081679">Call Us: 463-308-1679</a>
+                        <a class="btn btn-primary" href="#" onclick="showPage('referral')">Start My Free Enrollment →</a>
+                        <a class="btn btn-white-outline" href="tel:+14633081679">Call Us Now: 463-308-1679</a>
                     </div>
                 </div>
                 <div class="aud-hero-visual fade-in" style="transition-delay:0.2s">
-                    <h3 style="color:white;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;opacity:0.7">What You Get — For Free</h3>
+                    <h3 style="color:white;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;opacity:0.7">What You Get — 100% Free</h3>
                     <ul class="aud-checklist">
-                        <li>Prescription medications delivered to your home</li>
-                        <li>$0 out-of-pocket — we bill your workers' comp or PI case</li>
-                        <li>We handle all insurance and claim paperwork for you</li>
-                        <li>Access to doctors and attorneys in your area if needed</li>
-                        <li>Opioid-free pain management options available</li>
-                        <li>Refill reminders so you never run out of medication</li>
-                        <li>Friendly, knowledgeable support team always available</li>
+                        <li>Prescriptions delivered next-day to your home — no waiting in lines</li>
+                        <li>$0 out-of-pocket costs ever — we bill your workers' comp or PI case directly</li>
+                        <li>We handle all insurance paperwork, authorizations & denials for you</li>
+                        <li>Medications continue even if your claim is disputed or in litigation</li>
+                        <li>Automatic refill coordination — we contact your doctor before you run out</li>
+                        <li>Opioid-free pain management alternatives available</li>
+                        <li>Friendly, multilingual support team — we speak your language</li>
                     </ul>
                 </div>
             </div>
@@ -2875,13 +2944,13 @@
             <div class="container">
                 <div style="max-width:780px;margin:0 auto">
                     <span class="tag tag-orange">Our Mission</span>
-                    <h2 class="section-title">More Than a Pharmacy — A Partner in Recovery</h2>
-                    <p style="font-size:16px;color:var(--text-muted);line-height:1.85;margin-bottom:20px">Patient Priority Pharmacy was born from a clear gap in the market: injured workers deserved a pharmacy that truly understood their situation — one that knew the workers' comp and personal injury systems inside and out, and could navigate
-                        them on behalf of patients.</p>
-                    <p style="font-size:16px;color:var(--text-muted);line-height:1.85;margin-bottom:20px">We exclusively serve workers' compensation and personal injury cases. That's not a limitation — it's our superpower. Our entire team, our systems, and our processes are built around one kind of patient: someone who was injured and
-                        deserves to receive their medications without financial burden or administrative headache.</p>
-                    <p style="font-size:16px;color:var(--text-muted);line-height:1.85">Based in Brownsburg, Indiana, we serve patients across all 50 states, partnering with law firms, healthcare providers, case managers, and injured workers to make the medication access process simple, fast, and completely cost-free
-                        for the patient.</p>
+                    <h2 class="section-title">We Exist to Remove Every Barrier Between Injured Workers and Their Medications</h2>
+                    <p style="font-size:16px;color:var(--text-muted);line-height:1.85;margin-bottom:20px">Patient Priority Pharmacy was born from a clear, frustrating reality: retail pharmacies weren't built for workers' compensation cases. They don't understand the billing rules. They can't fight insurance denials. They aren't equipped
+                        to handle litigated claims. And injured workers — already burdened with injury, lost wages, and legal complexity — were left to figure it out themselves.</p>
+                    <p style="font-size:16px;color:var(--text-muted);line-height:1.85;margin-bottom:20px">We changed that. Patient Priority Pharmacy focuses exclusively on workers' compensation and personal injury cases. Our entire team — from enrollment specialists to claims coordinators to licensed pharmacists — is trained specifically
+                        in the state-specific nuances of WC and PI claims. We don't accept "denied" as a final answer. We appeal, advocate, and fight until your client or patient has the medications they were prescribed.</p>
+                    <p style="font-size:16px;color:var(--text-muted);line-height:1.85">Based in Brownsburg, Indiana, we serve patients across all 50 states. We partner with plaintiff attorneys, healthcare providers, nurse case managers, adjusters, and injured workers — serving as an extension of your team, not just a
+                        vendor. Our promise is simple: if a physician prescribes it, we will deliver it.</p>
                 </div>
             </div>
         </section>
